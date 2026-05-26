@@ -1,9 +1,66 @@
 import cosas.*
 
-describe "group of test for cosas" {
+describe "Tests hasta acá:primera parte" {
 
-  test "first test" {
-    assert.that(true)
+  test " paquete de ladrillos: inicialmente hay 10, le sumo 10, entonces total 20" {
+    assert.equals(10, paqueteDeLadrillos.cantidadDeLadrillos(10))
   }
+
+  test "cantidadDeLadrillos() actual: 20" {
+    paqueteDeLadrillos.cantidadDeLadrillos(10)
+    assert.equals(20, paqueteDeLadrillos.cantidadDeLadrillos())
+    
+  }
+  test "peso(), 2 * 20 = 40" {
+    paqueteDeLadrillos.cantidadDeLadrillos(10)
+    assert.equals(40, paqueteDeLadrillos.peso())
+  
+  }
+  test "embalaje() : peso()" {
+    paqueteDeLadrillos.peso()
+    assert.equals(20, paqueteDeLadrillos.peso())
+    
+  }
+  test "embalaje() : peligrosidad()" {
+    paqueteDeLadrillos.peligrosidad()
+    assert.equals(2, paqueteDeLadrillos.peligrosidad())
+  }
+  test "bateriaAntiarea:  peso()" {
+    bateriaAntiaerea.peso()
+    assert.equals(200, bateriaAntiaerea.peso())
+  }
+
+  test "bateriaAntiaerea: peligrosidad()" {
+      bateriaAntiaerea.peligrosidad()
+      assert.equals(0, bateriaAntiaerea.peligrosidad())
+  }
+  test "bateriaAntiaerea: modificarPeso()" {
+    bateriaAntiaerea.peso() + 100
+    not bateriaAntiaerea.estaConLosMisiles()
+    assert.equals(500, bateriaAntiaerea.modificarPeso())
+  }
+  test "bateriaAntiaerea: sumarPeligrosidad()" {
+    bateriaAntiaerea.estaConLosMisiles()
+    assert.equals(100, bateriaAntiaerea.peligrosidad() + 100)
+  }
+  test "bateriaAntiaerea(): estaConLosMisiles()" {
+    assert.that(bateriaAntiaerea.estaConLosMisiles())
+    
+  }
+  test "bateriaAntiaerea():estaDesarmada()" {
+    assert.notThat(bateriaAntiaerea.estaDesarmada())
+    
+  }
+  test "contenedorPortuario: pesoTotal()" {
+    contenedorPortuario.peso()
+    assert.equals(100, contenedorPortuario.pesoTotal())
+  }
+
+  test "contenedorPortuario: sumaTotalDeCosas()" { //220
+    
+  }
+
+
+
 
 }
